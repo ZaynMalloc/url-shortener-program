@@ -9,7 +9,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-var db = monk('localhost:27017/nodetest2');
 var isgd = require('isgd');
 var valid = require('url-valid');
 
