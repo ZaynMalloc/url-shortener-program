@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var validUrl = require('valid-url');
 var isgd = require('isgd');
+var valid = require('url-valid');
 
 
 /* GET home page. */
@@ -15,7 +15,10 @@ router.get('/new/:url(*)', function (req, res, next) {
     var inputedURL = req.params.url;
     var inputedURLString = req.params.url.toString();
     
-    if (validUrl.isUri(inputedURL)){  
+    valid(inputedURL, function (err, valid) {
+        
+        if (err) throw res.json({error:"Please use a valid URL"});
+
     
         isgd.shorten(inputedURLString , function(result) {
 
@@ -24,12 +27,7 @@ router.get('/new/:url(*)', function (req, res, next) {
         });
         
     }
-    
-    else{
-        
-        res.json({error:"Please use a valid URL"});
-    }
-    
+  
 });
 
 

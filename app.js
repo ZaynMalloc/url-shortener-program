@@ -12,8 +12,8 @@ var app = express();
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/nodetest2');
-var validUrl = require('valid-url');
 var isgd = require('isgd');
+var valid = require('url-valid');
 
 
 
