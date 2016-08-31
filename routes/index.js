@@ -26,7 +26,7 @@ router.get('/new/:url(*)', function (req, res, next) {
 
         });
         
-    }
+    });
   
 });
 
