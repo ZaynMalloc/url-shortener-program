@@ -4,7 +4,7 @@ var isgd = require('isgd');
 var valid = require('url-valid');
 
 
-/* GET home page. */
+/* Get home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
