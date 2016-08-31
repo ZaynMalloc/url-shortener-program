@@ -13,7 +13,7 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/nodetest2');
 var validUrl = require('valid-url');
-var TinyURL = require('tinyurl');
+var isgd = require('isgd');
 
 
 

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var validUrl = require('valid-url');
-var TinyURL = require('tinyurl');
+var isgd = require('isgd');
 
 
 /* GET home page. */
@@ -17,7 +17,7 @@ router.get('/new/:url(*)', function (req, res, next) {
     
     if (validUrl.isUri(inputedURL)){  
     
-        TinyURL.shorten(inputedURLString , function(result) {
+        isgd.shorten(inputedURLString , function(result) {
 
         res.json({inputedURL: inputedURL, shortenedURL: result});
 
